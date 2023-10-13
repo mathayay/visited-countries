@@ -1,3 +1,4 @@
+
 (function() {
   d3.xml('worldmap.svg').mimeType('image/svg+xml').get(function(error, xml) {
     document.querySelector('#svg').appendChild(xml.documentElement);
@@ -16,23 +17,59 @@
       d3.selectAll('#' + this.id).classed('hover', true);
     });
 
-    countries.map(function(country) {
-      d3.select('#' + country).style('fill', '#c0442c');
-      d3.select('#' + country + ' path').style('fill', '#c0442c');
+    function getRandom(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    
+
+    countriesE.map(function(country) {
+      d3.select('#' + country).style('fill', '#EB6ADF');
+      d3.select('#' + country + ' path').style('fill', '#EB6ADF');
     });
+    countriesM.map(function(country) {
+      d3.select('#' + country).style('fill', '#4B85EB');
+      d3.select('#' + country + ' path').style('fill', '#4B85EB');
+    });
+
+
+countries.map(function(country) {
+  d3.select('#' + country).style('fill', '#c0442c');
+  d3.select('#' + country + ' path').style('fill', '#c0442c');
+
+  d3.select('#' + country).on('click', function() {
+    // Define the total number of images in the folder
+    var totalImages = 3; // Replace 10 with the actual total number of images
+
+    // Generate a random number to select a random image
+    var randomImageIndex = Math.floor(Math.random() * totalImages) + 1;
+
+    // Construct the image path based on the random number and the country
+    var imagePath = country + '/' + randomImageIndex + '.jpg';
+
+    // Create a hidden image element
+    const img = new Image();
+    img.src = imagePath;
+
+    // Use the onload event to ensure the image is loaded before getting its dimensions
+    img.onload = function() {
+      const imageWindow = window.open(imagePath, '_blank', `width=${img.naturalWidth},height=${img.naturalHeight}`);
+      if (imageWindow) {
+        imageWindow.focus();
+      }
+    };
+  });
+});
+
+    
+
 
     d3.select('#number-countries').text(countries.length);
     d3.select('#globe-percent').text(Math.round(100 * countries.length / 193) + '%');
 
-    function parseId(id) {
-      return id.replace(/_/g, '  ').toUpperCase();
-    }
-
     function donnutChart() {
       var dataset = {
         apples: [countries.length, 193 - countries.length],
-      };
-
+      }
       var width = 460,
           height = 300,
           radius = Math.min(width, height) / 2;

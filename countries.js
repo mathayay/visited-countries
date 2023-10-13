@@ -1,36 +1,11 @@
 countries = [
   "brazil",
-  "ecuador",
-  "chile",
-  "argentina",
-  "uruguay",
-  "paraguay",
-  "peru",
-  "bolivia",
-  "colombia",
-  "usa",
-  "ireland",
-  "britain",
-  "france",
-  "italy",
-  "netherlands",
-  "czech",
-  "belgium",
-  "spain",
-  "germany",
-  "haiti",
-  "south_africa",
-  "uganda",
-  "mozambique",
-  "nigeria",
-  "india",
-  "thailand",
-  "java irian_jaya sulawesi sumatra kalimantan",
-  "turkey",
-  "croatia",
-  "hungary",
-  "portugal",
+  "mexico"
 ];
+
+countriesE = ["france"];
+countriesM = ["italy"];
+
 
 countriesSigla =
   "AFAXALDZASADAOAIAQAGARAMAWAUATAZBSBHBDBBBYBEBZBJBMBTBOBQBABWBRIOBNBGBFBIKHCMCACVKYCFTDCLCNCXCCCOKMCGCDCKCRCIHRCUCWCYCZDKDJDMDOECEGSVGQEREEETFKFOFJFIFRGFPFTFGAGMGEDEGHGIGRGLGDGPGUGTGGGNGWGYHTHMVAHNHKHUISINIDXZIRIQIEIMILITJMJPJEJOKZKEKIKPKRKWKGLALVLBLSLRLYLILTLUMOMKMGMWMYMVMLMTMHMQMRMUYTMXFMMDMCMNMEMSMAMZMMNANRNPNLNCNZNINENGNUNFMPNOOMPKPWPSPAPGPYPEPHPNPLPTPRQARERORURWBLSHKNLCMFPMVCWSSMSTSASNRSSCSLSGSXSKSISBSOZAGSSSESLKSDSRSJSZSECHSYTWTJTZTHTLTGTKTOTTTNTRTMTCTVUGUAAEGBUSUMUYUZVUVEVNVGVIWFEHYEZMZW";
