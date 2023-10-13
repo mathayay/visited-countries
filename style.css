@@ -116,3 +116,14 @@ a:visited, a {
 #map path:hover {
   fill: #efb1b1 !important;
 }
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  pointer-events: none;
+  font-size: 14px;
+  display: none;
+}
