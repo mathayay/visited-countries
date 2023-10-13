@@ -20,12 +20,14 @@
       var countryId = this.id;
 
       // Check if the country is in the "countries" array
-      const dep = countries.find((item) => item[0] === countryId)
+      const dep = countries.some((item) => item[0] === countryId)
+
       if (dep) {
+        const val = countries.find((item) => item[0] === countryId)
         d3.selectAll('.hover').classed('hover', false);
         d3.selectAll('#' + countryId).classed('hover', true);
         var center = getcenter(countryId);
-        var centerbase = getcenter(dep[1]);
+        var centerbase = getcenter(val[1]);
         var svg = d3.select('svg');
 
         // Remove any existing line elements
@@ -42,8 +44,8 @@
             `M ${centerbase[0]},${centerbase[1]} Q ${(centerbase[0] + center[0]) / 2},${centerbase[1] - 100} ${center[0]},${center[1]}`
           );
           var tooltip = d3.select('#country-tooltip');
-          var countryName = dep[0];
-          var datetrip = dep[2];
+          var countryName = val[0];
+          var datetrip = val[2];
 
           tooltip.style('display', 'block');
           tooltip.style('left', d3.event.pageX + 10 + 'px');
